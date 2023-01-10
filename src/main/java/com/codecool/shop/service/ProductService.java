@@ -11,6 +11,8 @@ public class ProductService{
     private ProductDao productDao;
     private ProductCategoryDao productCategoryDao;
 
+
+
     public ProductService(ProductDao productDao, ProductCategoryDao productCategoryDao) {
         this.productDao = productDao;
         this.productCategoryDao = productCategoryDao;
