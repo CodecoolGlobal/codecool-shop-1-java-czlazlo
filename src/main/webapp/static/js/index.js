@@ -2,8 +2,11 @@ function filterByCategory(categoryName) {
     let cards = document.querySelectorAll(".card")
     for (let cardElement of cards) {
         if(cardElement.dataset.category !== categoryName) {
-            cardElement.parentNode.removeChild(cardElement)
+            cardElement.style.display= "none"
 
+
+        }else {
+            cardElement.style.display= "flex"
         }
 
     }
