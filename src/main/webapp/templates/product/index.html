@@ -9,6 +9,7 @@
 
     <!-- Bootstrap components -->
     <!-- Latest compiled and minified Jquery -->
+    <script src="/static/js/index.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
@@ -32,6 +33,16 @@
 
 <div class="jumbotron text-center">
     <h1>Codecool Shop</h1>
+    <br>
+    <br>
+</div>
+<div>
+    <label>Choose Category
+        <button type="button" data-category-name="Woman" class="btn-for-woman">Woman Products</button>
+    </label>
+</div>
+<div>
+    <button type="button" data-category-name="Man" class="btn-for-man">Man Products</button>
 </div>
 
 <div class="container">
@@ -43,6 +54,9 @@
         <div class="col col-sm-12 col-md-6 col-lg-4" th:each="prod,iterStat : ${products}">
             <div class="card">
                 <img class="image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
+        <div class="col col-sm-12 col-md-6 col-lg-4 product" th:each="prod,iterStat : ${products}">
+            <div class="card" th:attr = "data-category=${prod.getProductCategory().getDepartment()}">
+                <img class="" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
                 <div class="card-header">
                     <h4 class="card-title" th:text="${prod.name}">Product name</h4>
                     <p class="card-text" th:text="${prod.description}">Product description... </p>

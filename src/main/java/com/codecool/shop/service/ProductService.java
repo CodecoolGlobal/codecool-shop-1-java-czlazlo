@@ -25,8 +25,9 @@ public class ProductService{
         return productDao.getBy(category);
     }
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAll() {
         return productDao.getAll();
     }
+
 
 }
