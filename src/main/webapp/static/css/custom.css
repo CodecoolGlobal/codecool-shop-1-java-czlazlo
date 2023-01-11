@@ -60,3 +60,12 @@
 {
     margin: 0 0 11px;
 }
+
+.image {
+    /*padding-left: 30px;*/
+    width: 347px;
+    height: 347px;
+    display: flex;
+    justify-content: center!important;
+    align-items: center!important;
+}
