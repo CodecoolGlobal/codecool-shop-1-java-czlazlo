@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
-public class ProductDaoMem implements ProductDao{
+public class ProductDaoMem implements ProductDao {
 
     private List<Product> data = new ArrayList<>();
     private static ProductDaoMem instance = null;
@@ -61,7 +61,12 @@ public class ProductDaoMem implements ProductDao{
     }
 
     @Override
-    public Locale stream() {
-        return null;
+    public List<Product> getByAvailability(Product product) {
+        return data.stream()
+                .filter(Product::isInStock) // for inStock
+                .filter(x -> !x.isInStock()) // for outOfStock
+                .collect(Collectors.toList());
     }
+
+
 }

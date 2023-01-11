@@ -17,5 +17,5 @@ public interface ProductDao {
     List<Product> getBy(Supplier supplier);
     List<Product> getBy(ProductCategory productCategory);
 
-    Locale stream();
+    List<Product> getByAvailability(Product product);
 }
