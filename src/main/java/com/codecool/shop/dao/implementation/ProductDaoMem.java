@@ -9,9 +9,10 @@ import com.codecool.shop.model.Supplier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
-public class ProductDaoMem implements ProductDao , CartDao {
+public class ProductDaoMem implements ProductDao{
 
     private List<Product> data = new ArrayList<>();
     private static ProductDaoMem instance = null;
@@ -57,5 +58,10 @@ public class ProductDaoMem implements ProductDao , CartDao {
     @Override
     public List<Product> getBy(ProductCategory productCategory) {
         return data.stream().filter(t -> t.getProductCategory().equals(productCategory)).collect(Collectors.toList());
+    }
+
+    @Override
+    public Locale stream() {
+        return null;
     }
 }
