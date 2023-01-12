@@ -69,3 +69,11 @@
     justify-content: center!important;
     align-items: center!important;
 }
+
+.edit-image{
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center!important;
+    align-items: center!important;
+}
