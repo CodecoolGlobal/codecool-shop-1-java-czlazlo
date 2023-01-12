@@ -20,12 +20,10 @@ function filterAll() {
 }
 
 function filterBySupplier(supplierName) {
-    let cardSupplier = document.querySelectorAll(".card")
+    let cardSupplier = document.querySelectorAll(".product")
     for (let supplierElement of cardSupplier) {
-        if(supplierElement.dataset.supplier !== supplierName) {
+        if(supplierElement.firstElementChild.dataset.supplier !== supplierName) {
             supplierElement.style.display= "none"
-
-
         }else {
             supplierElement.style.display= "flex"
         }
@@ -67,6 +65,7 @@ function buttonForSupplier() {
 function buttonForAll() {
     let buttonAll = document.querySelector(".btn-for-all")
     buttonAll.addEventListener("click", () => {
+        console.log("Dávid")
         filterAll()
     })
 }
