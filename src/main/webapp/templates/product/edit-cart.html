@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Codecool" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Codecool Shop</title>
+
+  <!-- Bootstrap components -->
+  <!-- Latest compiled and minified Jquery -->
+  <script src="/static/js/checkout_cart.js" defer></script>
+  <script src="/static/js/index.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!--Latest compiled and minified Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+          integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- End of Bootstrap components -->
+
+  <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
+  <script src="/static/js/addToCart.js" defer></script>
+</head>
+
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Codecool Shop</h1>
+  <br>
+  <br>
+</div>
+<div>
+  <p>Edit Cart</p>
+</div>
+
+<div class="container">
+  <button id="open-modal-button">Check out</button>
+
+
+  <div id="modal" style="display: none">
+    <div id="modal-content">
+      <h2>Enter your information</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label>Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label>Country:</label>
+        <input type="text" id="country" name="country"><br>
+        <label>Zip Code:</label>
+        <input type="text" id="zipcode" name="zipcode"><br>
+      </form>
+      <button id="submit-button">Submit</button>
+      <button id="close-modal-button">Close</button>
+    </div>
+  </div>
+
+  <div id="products" class="row">
+    <div class="" th:each="prod,iterStat : ${cart}">
+      <div class="card" th:attr = "data-category=${prod.getProductCategory().getDepartment()}">
+        <img class="edit-image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
+        <h4 class="card-title" th:text="${prod.name}">Product name</h4>
+        <div class="card-header">
+
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+          </div>
+          <div class="card-text">
+            <label>Quantity
+                <a class="btn btn-success" th:attr="product-id='/add-cart?pid=' + ${prod.id}"><input type="number"></a>
+            </label>
+            <a class=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div th:replace="footer.html :: copy"></div>
+
+</body>
+</html>
