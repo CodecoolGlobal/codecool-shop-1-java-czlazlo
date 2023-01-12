@@ -25,10 +25,10 @@ public class Initializer implements ServletContextListener {
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
 
         //setting up a new supplier
-        Supplier amazon = new Supplier("Amazon", "Man");
-        supplierDataStore.add(amazon);
-        Supplier lenovo = new Supplier("Lenovo", "Woman");
-        supplierDataStore.add(lenovo);
+        Supplier GLS = new Supplier("GLS", "Man");
+        supplierDataStore.add(GLS);
+        Supplier DPD = new Supplier("DPD", "Woman");
+        supplierDataStore.add(DPD);
 
         //setting up a new product category
         ProductCategory britney = new ProductCategory("Britney", "Woman", "Britney's gum is really good if you want to glue something.");
@@ -51,14 +51,14 @@ public class Initializer implements ServletContextListener {
         productCategoryDataStore.add(twopac);
 
         //setting up products and printing it
-        productDataStore.add(new Product("Britney Spears' chewing gum", new BigDecimal("499"), "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", britney, amazon));
-        productDataStore.add(new Product("Pamela Anderson's Baywatch swimsuit", new BigDecimal("599"), "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", pamela, lenovo));
-        productDataStore.add(new Product("Harrison Ford's Indiana Jones whip", new BigDecimal("699"), "USD", "Amazon's latest.", harrison, amazon));
-        productDataStore.add(new Product("Billie Eilish's outgrown clothes", new BigDecimal("299"), "USD", "Billie wears oversize clothes... so she will never outgrown her clothes... but you can pay a lot of money for it to us, but your order will never deliver", billie, amazon));
-        productDataStore.add(new Product("Michael Jackson's nose", new BigDecimal("1599"), "USD", "You need a plastic surgery for nose? AWESOME! You can buy Jacko's nose for yourself for a wonderful price.", michael, amazon));
-        productDataStore.add(new Product("David Beckham's underpants", new BigDecimal("199"), "USD", "Do you want an underpants, that had a celebrity's jewelry in it? BUY IT!", david, amazon));
-        productDataStore.add(new Product("Snoop Dogg's gold teeth", new BigDecimal("1299"), "USD", "Amazing golden tooth just for you, straightly from Snoop Dogg's mouth!", snoop, amazon));
-        productDataStore.add(new Product("Chris Hemsworth's hair", new BigDecimal("399"), "USD", "The amazing Thor's hair ... You can hook up his hair on yours, and Chris Hemsworth will be with you always, and forever.", chris, amazon));
-        productDataStore.add(new Product("The bullets which killed 2Pac", new BigDecimal("899"), "USD", "If you want something different from the others ... The bullets from 2Pac. ", twopac, amazon));
+        productDataStore.add(new Product("Britney Spears' chewing gum", new BigDecimal("499"), "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", britney, DPD));
+        productDataStore.add(new Product("Pamela Anderson's Baywatch swimsuit", new BigDecimal("599"), "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", pamela, DPD));
+        productDataStore.add(new Product("Harrison Ford's Indiana Jones whip", new BigDecimal("699"), "USD", "Amazon's latest.", harrison, DPD));
+        productDataStore.add(new Product("Billie Eilish's outgrown clothes", new BigDecimal("299"), "USD", "Billie wears oversize clothes... so she will never outgrown her clothes... but you can pay a lot of money for it to us, but your order will never deliver", billie, GLS));
+        productDataStore.add(new Product("Michael Jackson's nose", new BigDecimal("1599"), "USD", "You need a plastic surgery for nose? AWESOME! You can buy Jacko's nose for yourself for a wonderful price.", michael, DPD));
+        productDataStore.add(new Product("David Beckham's underpants", new BigDecimal("199"), "USD", "Do you want an underpants, that had a celebrity's jewelry in it? BUY IT!", david, DPD));
+        productDataStore.add(new Product("Snoop Dogg's gold teeth", new BigDecimal("1299"), "USD", "Amazing golden tooth just for you, straightly from Snoop Dogg's mouth!", snoop, GLS));
+        productDataStore.add(new Product("Chris Hemsworth's hair", new BigDecimal("399"), "USD", "The amazing Thor's hair ... You can hook up his hair on yours, and Chris Hemsworth will be with you always, and forever.", chris, GLS));
+        productDataStore.add(new Product("The bullets which killed 2Pac", new BigDecimal("899"), "USD", "If you want something different from the others ... The bullets from 2Pac. ", twopac, GLS));
     }
 }

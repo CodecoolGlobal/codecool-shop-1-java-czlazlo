@@ -1,16 +1,38 @@
 function filterByCategory(categoryName) {
-    let cards = document.querySelectorAll(".card")
+    let cards = document.querySelectorAll(".product")
     for (let cardElement of cards) {
-        if(cardElement.dataset.category !== categoryName) {
+        if(cardElement.firstElementChild.dataset.category !== categoryName) {
             cardElement.style.display= "none"
 
 
-        }else {
+        }else  {
             cardElement.style.display= "flex"
         }
 
     }
 }
+
+function filterAll() {
+    let allCard = document.querySelectorAll(".product")
+    for(let cardElement of allCard) {
+        cardElement.style.display= "flex"
+    }
+}
+
+function filterBySupplier(supplierName) {
+    let cardSupplier = document.querySelectorAll(".card")
+    for (let supplierElement of cardSupplier) {
+        if(supplierElement.dataset.supplier !== supplierName) {
+            supplierElement.style.display= "none"
+
+
+        }else {
+            supplierElement.style.display= "flex"
+        }
+
+    }
+}
+
 
 function buttonForCategory() {
     let buttonForWoman = document.querySelector(".btn-for-woman")
@@ -18,6 +40,7 @@ function buttonForCategory() {
         filterByCategory("Woman")
     })
     let buttonForMan = document.querySelector(".btn-for-man")
+    console.log(buttonForMan)
     buttonForMan.addEventListener("click", () => {
         filterByCategory("Man")
     })
@@ -27,4 +50,27 @@ function buttonForCategory() {
     })
 }
 
+
+function buttonForSupplier() {
+    let buttonForGLS = document.querySelector(".supplier-gls")
+    buttonForGLS.addEventListener("click", () => {
+        filterBySupplier("GLS")
+
+    })
+    let buttonForDPD = document.querySelector(".supplier-dpd")
+    buttonForDPD.addEventListener("click", () => {
+        filterBySupplier("DPD")
+    })
+
+}
+
+function buttonForAll() {
+    let buttonAll = document.querySelector(".btn-for-all")
+    buttonAll.addEventListener("click", () => {
+        filterAll()
+    })
+}
+
 buttonForCategory()
+buttonForSupplier()
+buttonForAll()
