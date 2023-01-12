@@ -22,7 +22,7 @@ public class Product extends BaseModel {
         return defaultPrice;
     }
 
-    public void setDefaultPrice(BigDecimal defaultPrice) {
+    public void setDefaultPrice(BigDecimal defaultPrice)  {
         this.defaultPrice = defaultPrice;
     }
 
