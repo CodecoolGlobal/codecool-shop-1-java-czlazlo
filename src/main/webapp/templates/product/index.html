@@ -5,7 +5,7 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <title>Codecool Shop</title>
+    <title>Celebrities Artifact Shop</title>
 
     <!-- Bootstrap components -->
     <!-- Latest compiled and minified Jquery -->
@@ -34,19 +34,19 @@
 <body>
 
 <div class="jumbotron text-center">
-    <h1>Codecool Shop</h1>
-    <br>
-    <br>
-
+    <h1>Celebrities Artifact Shop</h1>
     <a class="btn btn-primary" href="/edit-cart">Go to basket<span class="bi bi-basket"></span></a>
 </div>
 <div>
-    <label>Choose Category
+    <p>Choose Category:</p>
         <button type="button" data-category-name="Woman" class="btn-for-woman">Woman Products</button>
-    </label>
+        <button type="button" data-category-name="Man" class="btn-for-man">Man Products</button>
+        <button type="button" data-category-name="All" class="btn-for-all">All Products</button>
 </div>
 <div>
-    <button type="button" data-category-name="Man" class="btn-for-man">Man Products</button>
+    <p>Choose by Supplier:</p>
+    <button type="button" data-supplier-name="GLS" class="supplier-gls">GLS</button>
+    <button type="button" data-supplier-name="DPD" class="supplier-dpd">DPD</button>
 </div>
 
 <div class="container">
@@ -55,9 +55,9 @@
     </div>
 
     <div id="products" class="row">
-        <div class="co l col-sm-12 col-md-6 col-lg-4 product" th:each="prod,iterStat : ${products}">
-            <div class="card" th:attr = "data-category=${prod.getProductCategory().getDepartment()}">
-                <img class="image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
+        <div class="col col-sm-12 col-md-6 col-lg-4 product" th:each="prod,iterStat : ${products}">
+            <div class="card" th:attr = "data-category=${prod.getProductCategory().getDepartment()} , data-supplier=${prod.getSupplier().getName()}">
+                <img class="" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
                 <div class="card-header">
                     <h4 class="card-title" th:text="${prod.name}">Product name</h4>
                     <p class="card-text" th:text="${prod.description}">Product description... </p>
