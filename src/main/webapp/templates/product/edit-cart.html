@@ -9,6 +9,7 @@
 
   <!-- Bootstrap components -->
   <!-- Latest compiled and minified Jquery -->
+  <script src="/static/js/checkout_cart.js" defer></script>
   <script src="/static/js/index.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -43,14 +44,34 @@
 </div>
 
 <div class="container">
+  <button id="open-modal-button">Check out</button>
+
+
+  <div id="modal" style="display: none">
+    <div id="modal-content">
+      <h2>Enter your information</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label>Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label>Country:</label>
+        <input type="text" id="country" name="country"><br>
+        <label>Zip Code:</label>
+        <input type="text" id="zipcode" name="zipcode"><br>
+      </form>
+      <button id="submit-button">Submit</button>
+      <button id="close-modal-button">Close</button>
+    </div>
+  </div>
 
   <div id="products" class="row">
-    <div class="col col-sm-12 col-md-6 col-lg-4 product" th:each="prod,iterStat : ${cart}">
+    <div class="" th:each="prod,iterStat : ${cart}">
       <div class="card" th:attr = "data-category=${prod.getProductCategory().getDepartment()}">
-        <img class="image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
+        <img class="edit-image" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
+        <h4 class="card-title" th:text="${prod.name}">Product name</h4>
         <div class="card-header">
-          <h4 class="card-title" th:text="${prod.name}">Product name</h4>
-          <p class="card-text" th:text="${prod.description}">Product description... </p>
+
         </div>
         <div class="card-body">
           <div class="card-text">
