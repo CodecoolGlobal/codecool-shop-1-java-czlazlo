@@ -21,6 +21,10 @@ function buttonForCategory() {
     buttonForMan.addEventListener("click", () => {
         filterByCategory("Man")
     })
+    let buttonForAll = document.querySelector(".btn-for-all")
+    buttonForAll.addEventListener("click", () => {
+        filterByCategory("All")
+    })
 }
 
 buttonForCategory()

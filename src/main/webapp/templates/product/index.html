@@ -37,17 +37,15 @@
     <br>
 </div>
 <div>
-    <label>Choose Category
+    <p id="p-tag">Choose Category</p>
         <button type="button" data-category-name="Woman" class="btn-for-woman">Woman Products</button>
-    </label>
-</div>
-<div>
-    <button type="button" data-category-name="Man" class="btn-for-man">Man Products</button>
+        <button type="button" data-category-name="Man" class="btn-for-man">Man Products</button>
+        <button type="button" data-category-name="All" class="btn-for-all">All Products</button>
 </div>
 
 <div class="container">
     <div class="card">
-        <strong th:text="${category.name}">Category Title</strong>
+
     </div>
 
     <div id="products" class="row">
