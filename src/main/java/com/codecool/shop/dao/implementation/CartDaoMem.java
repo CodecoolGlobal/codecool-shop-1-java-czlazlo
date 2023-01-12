@@ -25,11 +25,7 @@ public class CartDaoMem implements CartDao {
         return instance;
     }
     public void addToCartProduct(Product cartProduct) {
-        for (Product item : data) {
-            if (item.getId()== cartProduct.getId()) {
-                data.add(item);
-            }
-        }
+        data.add(cartProduct);
     }
 
     public void removeFromCart(Product cartProduct) {
@@ -70,6 +66,13 @@ public class CartDaoMem implements CartDao {
     @Override
     public List<Product> getBy(ProductCategory productCategory) {
         return data.stream().filter(t -> t.getProductCategory().equals(productCategory)).collect(Collectors.toList());
+    }
+
+    @Override
+    public String toString() {
+        return "CartDaoMem{" +
+                "data=" + data +
+                '}';
     }
 }
 
