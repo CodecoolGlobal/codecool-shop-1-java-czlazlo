@@ -15,4 +15,6 @@ public interface CartDao {
     List<Product> getAll();
     List<Product> getBy(Supplier supplier);
     List<Product> getBy(ProductCategory productCategory);
+
+    void addToCartProduct(Product product);
 }

@@ -11,6 +11,8 @@ public class ProductService{
     private ProductDao productDao;
     private ProductCategoryDao productCategoryDao;
 
+
+
     public ProductService(ProductDao productDao, ProductCategoryDao productCategoryDao) {
         this.productDao = productDao;
         this.productCategoryDao = productCategoryDao;
@@ -23,6 +25,10 @@ public class ProductService{
     public List<Product> getProductsForCategory(int categoryId){
         var category = productCategoryDao.find(categoryId);
         return productDao.getBy(category);
+    }
+
+    public List<Product> getAll() {
+        return productDao.getAll();
     }
 
 
