@@ -5,6 +5,7 @@ import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 
 import java.util.List;
+import java.util.Locale;
 
 public interface ProductDao {
 
@@ -16,4 +17,5 @@ public interface ProductDao {
     List<Product> getBy(Supplier supplier);
     List<Product> getBy(ProductCategory productCategory);
 
+    List<Product> getByAvailability(Product product);
 }

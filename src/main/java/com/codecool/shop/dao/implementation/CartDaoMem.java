@@ -1,30 +1,26 @@
 package com.codecool.shop.dao.implementation;
-
-
 import com.codecool.shop.dao.CartDao;
-import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
-public class ProductDaoMem implements ProductDao {
+public class CartDaoMem implements CartDao {
 
     private List<Product> data = new ArrayList<>();
-    private static ProductDaoMem instance = null;
+    private static CartDaoMem instance = null;
 
     /* A private Constructor prevents any other class from instantiating.
      */
-    private ProductDaoMem() {
+    private CartDaoMem() {
     }
 
-    public static ProductDaoMem getInstance() {
+    public static CartDaoMem getInstance() {
         if (instance == null) {
-            instance = new ProductDaoMem();
+            instance = new CartDaoMem();
         }
         return instance;
     }
@@ -59,14 +55,5 @@ public class ProductDaoMem implements ProductDao {
     public List<Product> getBy(ProductCategory productCategory) {
         return data.stream().filter(t -> t.getProductCategory().equals(productCategory)).collect(Collectors.toList());
     }
-
-    @Override
-    public List<Product> getByAvailability(Product product) {
-        return data.stream()
-                .filter(Product::isInStock) // for inStock
-                .filter(x -> !x.isInStock()) // for outOfStock
-                .collect(Collectors.toList());
-    }
-
-
 }
+
