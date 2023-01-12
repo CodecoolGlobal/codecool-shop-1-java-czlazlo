@@ -24,6 +24,22 @@ public class CartDaoMem implements CartDao {
         }
         return instance;
     }
+    public void addToCartProduct(Product cartProduct) {
+        for (Product item : data) {
+            if (item.getId()== cartProduct.getId()) {
+                data.add(item);
+            }
+        }
+    }
+
+    public void removeFromCart(Product cartProduct) {
+        for (Product item : data) {
+            if (item.getId() == cartProduct.getId()) {
+                data.remove(item);
+            }
+            System.out.println("No such item found in Cart.");
+        }
+    }
 
     @Override
     public void add(Product product) {
