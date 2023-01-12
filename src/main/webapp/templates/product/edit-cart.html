@@ -25,6 +25,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <!-- End of Bootstrap components -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
   <script src="/static/js/addToCart.js" defer></script>
@@ -59,6 +60,8 @@
             <label>Quantity
                 <a class="btn btn-success" th:attr="product-id='/add-cart?pid=' + ${prod.id}"><input type="number"></a>
             </label>
+            <button class="remove-button" th:attr="remove-by-id='/edit-cart?pid=' + ${prod.id}"><i class="fa fa-trash-o"></i></button>
+
             <a class=""></a>
           </div>
         </div>

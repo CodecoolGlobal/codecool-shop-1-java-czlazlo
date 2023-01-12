@@ -30,15 +30,16 @@ public class EditCartController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         CartDao cart = CartDaoMem.getInstance();
+//        String productId = request.getParameter("pid");
+//        System.out.println(productId);
+//        int productIdInt = Integer.parseInt(productId);
+//        System.out.println(productIdInt);
+//        Product selectedProduct = cart.find(productIdInt);
+//        cart.removeFromCart(selectedProduct);
         System.out.println("edit cart" + cart);
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(request.getServletContext());
         WebContext context = new WebContext(request, response, request.getServletContext());
         context.setVariable("cart", cart.getAll());
-        // // Alternative setting of the template context
-        // Map<String, Object> params = new HashMap<>();
-        // params.put("category", productCategoryDataStore.find(1));
-        // params.put("products", productDataStore.getBy(productCategoryDataStore.find(1)));
-        // context.setVariables(params);
         engine.process("product/edit-cart.html", context, response.getWriter());
     }
 }
