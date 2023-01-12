@@ -9,6 +9,7 @@
 
     <!-- Bootstrap components -->
     <!-- Latest compiled and minified Jquery -->
+    <script src="/static/js/checkout_cart.js" defer></script>
     <script src="/static/js/index.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -27,7 +28,6 @@
     <!-- End of Bootstrap components -->
 
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
-    <script src="/static/js/addToCart.js" defer></script>
 </head>
 
 <body>
@@ -36,6 +36,26 @@
     <h1>Codecool Shop</h1>
     <br>
     <br>
+    <button id="open-modal-button">Check out</button>
+
+
+    <div id="modal" style="display: none">
+        <div id="modal-content">
+            <h2>Enter your information</h2>
+            <form>
+                <label>Name:</label>
+                <input type="text" id="name" name="name"><br>
+                <label>Email:</label>
+                <input type="email" id="email" name="email"><br>
+                <label>Country:</label>
+                <input type="text" id="country" name="country"><br>
+                <label>Zip Code:</label>
+                <input type="text" id="zipcode" name="zipcode"><br>
+            </form>
+            <button id="submit-button">Submit</button>
+            <button id="close-modal-button">Close</button>
+        </div>
+    </div>
     <a class="btn btn-primary" href="/edit-cart">Go to basket<span class="bi bi-basket"></span></a>
 </div>
 <div>
@@ -65,8 +85,7 @@
                         <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                     </div>
                     <div class="card-text">
-                        <a class="btn btn-success" th:attr="product-id='/add-cart?pid=' + ${prod.id}" >Add to cart</a>
-                        <a class=""></a>
+                        <a class="btn btn-success" href="#">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -76,6 +95,7 @@
 </div>
 
 <div th:replace="footer.html :: copy"></div>
-
+    </div>
+</div>
 </body>
 </html>
