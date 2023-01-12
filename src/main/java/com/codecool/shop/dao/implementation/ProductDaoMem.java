@@ -28,6 +28,18 @@ public class ProductDaoMem implements ProductDao {
         }
         return instance;
     }
+    public void decreaseQuantity(Product product){
+        product.setQuantity(-1);
+    }
+
+    public void checkIfOutOfStock(List<Product> products){
+        for (Product product : products) {
+            if(product.getQuantity() < 1){
+                product.setInStock(false);
+            }
+            System.out.println(product + " is now out of stock");
+        }
+    }
 
     @Override
     public void add(Product product) {
@@ -61,9 +73,14 @@ public class ProductDaoMem implements ProductDao {
     }
 
     @Override
-    public List<Product> getByAvailability(Product product) {
+    public List<Product> getByAvailability() {
         return data.stream()
                 .filter(Product::isInStock) // for inStock
+//                .filter(x -> !x.isInStock()) // for outOfStock
+                .collect(Collectors.toList());
+    }
+    public List<Product> getByOutOfStock(){
+        return data.stream()
                 .filter(x -> !x.isInStock()) // for outOfStock
                 .collect(Collectors.toList());
     }

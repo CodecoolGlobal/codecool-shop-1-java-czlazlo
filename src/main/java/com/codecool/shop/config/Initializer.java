@@ -45,14 +45,14 @@ public class Initializer implements ServletContextListener {
         productCategoryDataStore.add(david);
 
         //setting up products and printing it
-        productDataStore.add(new Product("Britney Spears' chewing gum", new BigDecimal("49.9"), "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", britney, amazon, true));
-        productDataStore.add(new Product("Pamela Anderson's Baywatch swimsuit", new BigDecimal("479"), "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", pamela, lenovo, true));
-        productDataStore.add(new Product("Harrison Ford's Indiana Jones whip", new BigDecimal("89"), "USD", "Amazon's latest.", harrison, amazon, true));
-        productDataStore.add(new Product("Billie Eilish's outgrown clothes", new BigDecimal("89"), "USD", "Amazon...", billie, amazon, true));
-        productDataStore.add(new Product("Michael Jackson's nose", new BigDecimal("89"), "USD", "Amazon...", michael, amazon, true));
-        productDataStore.add(new Product("David Beckham's underpants", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true));
-        productDataStore.add(new Product("Snoop Dogg's gold teeth", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true));
-        productDataStore.add(new Product("Chris Hemsworth's hair", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true));
-        productDataStore.add(new Product("The bullets which killed 2Pac", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true));
+        productDataStore.add(new Product("Britney Spears' chewing gum", new BigDecimal("49.9"), "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", britney, amazon, true, 1));
+        productDataStore.add(new Product("Pamela Anderson's Baywatch swimsuit", new BigDecimal("479"), "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", pamela, lenovo, true, 1));
+        productDataStore.add(new Product("Harrison Ford's Indiana Jones whip", new BigDecimal("89"), "USD", "Amazon's latest.", harrison, amazon, true,1));
+        productDataStore.add(new Product("Billie Eilish's outgrown clothes", new BigDecimal("89"), "USD", "Amazon...", billie, amazon, true,1));
+        productDataStore.add(new Product("Michael Jackson's nose", new BigDecimal("89"), "USD", "Amazon...", michael, amazon, true,1));
+        productDataStore.add(new Product("David Beckham's underpants", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true,1));
+        productDataStore.add(new Product("Snoop Dogg's gold teeth", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true,1));
+        productDataStore.add(new Product("Chris Hemsworth's hair", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true,1));
+        productDataStore.add(new Product("The bullets which killed 2Pac", new BigDecimal("89"), "USD", "Amazon...", david, amazon, true, 5));
     }
 }
