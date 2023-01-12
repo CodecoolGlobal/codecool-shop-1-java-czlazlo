@@ -29,6 +29,7 @@ public class CartController extends HttpServlet {
         String productId = req.getParameter("pid");
         int productIdInt = Integer.parseInt(productId);
         Cart sessionCart = new Cart();
+        System.out.println(productDataStore.find(productIdInt));
         sessionCart.addToCartProduct(productDataStore.find(productIdInt));
 
 
