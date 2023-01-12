@@ -37,7 +37,7 @@ public class Initializer implements ServletContextListener {
         productCategoryDataStore.add(pamela);
         ProductCategory harrison = new ProductCategory("Harrison", "Man", "If you want to surprise your boyfriend/girlfriend you can buy Harrison's whip... You can cosplay him with it.");
         productCategoryDataStore.add(harrison);
-        ProductCategory billie = new ProductCategory("Billie", "Woman", "Billie wears oversize clothes... so she will never outgrown her clothes... but you can pay a lot of money for it to us, but your order will never deliver.");
+        ProductCategory billie = new ProductCategory("Billie", "Woman", "Billie wears oversize clothes... so she will never outgrown her clothes... but you can pay a lot of money for it to us, but your order will never deliver   .");
         productCategoryDataStore.add(billie);
         ProductCategory michael = new ProductCategory("Michael", "Man", "You need a plastic surgery for nose? AWESOME! You can buy Jacko's nose for yourself for a wonderful price.");
         productCategoryDataStore.add(michael);

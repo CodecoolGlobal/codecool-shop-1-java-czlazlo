@@ -10,14 +10,16 @@ public class Product extends BaseModel {
     private ProductCategory productCategory;
     private Supplier supplier;
     private boolean inStock;
+    private int quantity;
 
 
-    public Product(String name, BigDecimal defaultPrice, String currencyString, String description, ProductCategory productCategory, Supplier supplier, boolean inStock) {
+    public Product(String name, BigDecimal defaultPrice, String currencyString, String description, ProductCategory productCategory, Supplier supplier, boolean inStock, int quantity) {
         super(name, description);
         this.setPrice(defaultPrice, currencyString);
         this.setSupplier(supplier);
         this.setProductCategory(productCategory);
         this.inStock = true;
+        this.quantity = quantity;
     }
 
     public boolean isInStock() {
@@ -26,6 +28,14 @@ public class Product extends BaseModel {
 
     public void setInStock(boolean inStock) {
         this.inStock = inStock;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public BigDecimal getDefaultPrice() {

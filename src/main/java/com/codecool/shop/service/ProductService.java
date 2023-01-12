@@ -31,5 +31,9 @@ public class ProductService{
         return productDao.getAll();
     }
 
+    public List<Product> getByAvailability () {
+        return productDao.getByAvailability();
+    }
+
 
 }
