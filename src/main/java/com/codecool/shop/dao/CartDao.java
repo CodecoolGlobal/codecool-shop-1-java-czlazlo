@@ -17,4 +17,6 @@ public interface CartDao {
     List<Product> getBy(ProductCategory productCategory);
 
     void addToCartProduct(Product product);
+
+    void removeFromCart(Product cartProduct);
 }

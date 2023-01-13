@@ -29,12 +29,7 @@ public class CartDaoMem implements CartDao {
     }
 
     public void removeFromCart(Product cartProduct) {
-        for (Product item : data) {
-            if (item.getId() == cartProduct.getId()) {
-                data.remove(item);
-            }
-            System.out.println("No such item found in Cart.");
-        }
+        data.remove(cartProduct);
     }
 
     @Override
