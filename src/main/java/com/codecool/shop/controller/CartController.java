@@ -38,5 +38,4 @@ public class CartController extends HttpServlet {
         cartDataStore.addToCartProduct(selectedProduct);
         System.out.println(cartDataStore);
     }
-
 }
